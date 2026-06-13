@@ -1,16 +1,62 @@
-# React + Vite
+# Birthday Reminder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React + Vite application for tracking birthdays, calculating ages, and preparing celebration details.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Add and store birthday entries locally using `localStorage`
+- Calculate age, next birthday countdown, and zodiac signs automatically
+- Save contact phone numbers for quick WhatsApp greetings
+- Import and export birthday data as JSON backup files
+- Onboarding modal with confetti animation
+- Responsive UI with glassmorphism styling
 
-## React Compiler
+## Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+## Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run dev
+```
+
+Open the local development URL shown by Vite in your browser.
+
+## Production Build
+
+```bash
+npm run build
+```
+
+## Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Deployment
+
+This project uses Vite's `base` configuration to support deployment environments.
+
+- For Vercel deployment, the app is configured to use `base: '/'`
+- For GitHub Pages deployment, the app can use `base: '/birthday-reminder/'`
+
+If you deploy to Vercel, make sure the production build assets are served from the root path.
+
+## Notes
+
+- If `localStorage` contains invalid data, the app resets the stored birthdays safely
+- Future commits should be made with a Git user/email associated with your GitHub account for proper attribution
+
+## Stack
+
+- React 19
+- Vite 8
+- `canvas-confetti`
+
+## License
+
+This project is open source and available to use under the terms of your choice.
