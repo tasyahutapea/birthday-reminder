@@ -2,6 +2,9 @@
 
 A simple React + Vite application for tracking birthdays, calculating ages, and preparing celebration details.
 
+<img width="466" height="398" alt="Screenshot 2026-06-13 153329" src="https://github.com/user-attachments/assets/5f5fbf80-1995-4b37-98a8-187b8fa64e91" />
+<img width="463" height="409" alt="Screenshot 2026-06-13 153344" src="https://github.com/user-attachments/assets/43283178-a8b9-4504-9117-6fd388e03c02" />
+
 ## Features
 
 - Add and store birthday entries locally using `localStorage`
