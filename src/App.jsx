@@ -53,7 +53,15 @@ const getZodiacSign = (dateStr) => {
 function App() {
   const [birthdays, setBirthdays] = useState(() => {
     const saved = localStorage.getItem('birthdays');
-    return saved ? JSON.parse(saved) : [];
+    if (!saved) return [];
+
+    try {
+      return JSON.parse(saved);
+    } catch (error) {
+      console.warn('Failed to parse saved birthdays from localStorage:', error);
+      localStorage.removeItem('birthdays');
+      return [];
+    }
   });
   
   const [name, setName] = useState('');
@@ -87,8 +95,12 @@ function App() {
     e.preventDefault();
     if (!name || !date) return;
     
+    const uuid = typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
+      ? crypto.randomUUID()
+      : `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
     const newBirthday = {
-      id: crypto.randomUUID(),
+      id: uuid,
       name,
       date,
       phone,
